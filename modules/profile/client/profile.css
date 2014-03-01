@@ -1,0 +1,102 @@
+label{
+	margin-bottom: 5px;
+}
+
+.blue{
+  color: white;
+  background-color: #6ECADC;
+  border: none;
+}
+
+#profile-img{
+	margin: 15px 0px;
+	width: 125px;
+}
+
+.profile-title{
+	font-weight: 600;
+	font-size: 16px;
+}
+
+#change-profile-picture{
+	margin-bottom: 10px;
+}
+
+.glyphicon{
+	margin-right: 5px;
+}
+
+#performance-subtitle{
+	margin-top: 30px;
+  font-weight: 500;
+}
+
+.performance, .performance-review{
+	margin-top: 20px;
+}
+
+.performance-review{
+	font-weight: 500;
+}
+
+/*Line Chart*/
+path { 
+	stroke: #E9A820;
+	stroke-width: 2;
+	fill: none;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+
+/*Bubble Chart*/
+#vis, svg#line-chart{
+  position: relative;
+}
+
+#bubble-background {
+  fill: none;
+  pointer-events: all;
+}
+
+.bubble-node {
+/*  fill: #DCE9BE;*/
+  fill: #6ECADC;
+}
+
+.bubble-hover {
+  fill: #CEE98F;
+}
+
+.bubble-selected {
+  fill: #CEE98F;
+  stroke: #CEE98F;
+  stroke-width: 1.5px;
+}
+
+.active {
+  color: #A6BA92
+}
+
+a.bubble-label {
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1em;
+  position: absolute;
+}
+
+
+.bubble-label .bubble-label-value {
+  font: 11px sans-serif;
+  white-space: nowrap;
+}
+
+

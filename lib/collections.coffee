@@ -116,7 +116,7 @@ if Meteor.isClient
     Categories: Meteor.subscribe 'Categories'
     Cards: Meteor.subscribe 'Cards'
     Activity: Meteor.subscribe 'Activity'
-
+    Languages: Meteor.subscribe 'Languages'
 
 if Meteor.isServer
   TAP.pubs =
@@ -126,6 +126,7 @@ if Meteor.isServer
     Categories: Meteor.publish 'Categories', -> TAP.cols.Categories.find()
     Cards: Meteor.publish 'Cards', -> TAP.cols.Cards.find()
     Activity: Meteor.publish 'Activity', -> TAP.cols.Activity.find()
+    Languages: Meteor.publish 'Languages', -> TAP.cols.Languages.find()
 
   Accounts.onCreateUser (options, user) ->
     # console.log options

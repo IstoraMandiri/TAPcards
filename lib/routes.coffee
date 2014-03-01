@@ -1,23 +1,28 @@
 if Meteor.isClient
 
-  Router.configure
-    layoutTemplate:'layout'
-
   Router.map ->
-    @.route 'home',
+    @.route 'menu',
     	path: '/'
     	template: 'menu'
+    	layoutTemplate: 'layout'
     	before: ->
-    		if not Meteor.loggingIn() and not Meteor.user()
-    			@.render 'login'
+    		if not Meteor.user()
+    			@.redirect '/login'
+
+    @.route 'selectLanguage',
+    	path: '/selectLanguage'
+    	template: 'selectLanguage'
+    	layoutTemplate: 'layout'
 
     @.route 'login',
     	path: '/login'
     	template: 'login'
+    	layoutTemplate: 'layout'
 
     @.route 'profile',
     	path: '/profile'
     	template: 'profile'
+    	layoutTemplate: 'layout'
     	before: ->
     		if not Meteor.loggingIn() and not Meteor.user()
     			@.render 'login'
@@ -25,6 +30,7 @@ if Meteor.isClient
     @.route 'flashcards',
     	path: '/flashcards'
     	template: 'flashcards'
+    	layoutTemplate: 'layout'
     	before: ->
     		if not Meteor.loggingIn() and not Meteor.user()
     			@.render 'login'

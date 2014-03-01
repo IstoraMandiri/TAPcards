@@ -111,7 +111,7 @@ if Meteor.isServer
   TAP.pubs =
     myProfile: Meteor.publish 'myProfile', -> 
       TAP.cols.UserProfiles.find 
-        _id:Meteor.users.findOne({_id:@userId}).profile._id
+        _id:Meteor.users.findOne({_id:@userId})?.profile._id
     Categories: Meteor.publish 'Categories', -> TAP.cols.Categories.find()
     Cards: Meteor.publish 'Cards', -> TAP.cols.Cards.find()
     Activity: Meteor.publish 'Activity', -> TAP.cols.Activity.find()

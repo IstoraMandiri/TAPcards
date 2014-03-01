@@ -18,7 +18,6 @@ generateCardAnswers = (cardId, destLang) ->
 
 Meteor.methods
   'generateNextCards' : (destLang) ->
-    console.log 'destlang is', destLang
     randomCat = _.sample TAP.cols.Categories.find().fetch()
     randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id}).fetch(), 10 # change to actual length
     randomCardIds = _.map randomCards, (card) -> card._id

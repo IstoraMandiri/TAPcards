@@ -94,7 +94,7 @@ TAP.cols =
     schema: new SimpleSchema
       type:
         type: String
-        allowedValues: ['verify','answer']
+        allowedValues: ['answer','verify','contribute']
       user:
         type: Object
         blackbox: true

@@ -1,4 +1,4 @@
 
 
 if Meteor.isClient
-  Template.hello.greeting = -> 'You are running meteor'
+  Template.home.greeting = -> 'You are running meteor'

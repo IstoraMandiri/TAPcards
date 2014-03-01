@@ -3,5 +3,18 @@
 </head>
 
 <body>
-  {{> type_your_template_here}}
+
 </body>
+
+<template name='layout'>
+  {{yield}}
+</template>
+
+<template name='home'>
+  <h1>{{greeting}}</h1>
+  {{> type_your_template_here}}
+</template>
+
+<template name='type_your_template_here'>
+  <p>You will find your template in /modules/x/y.html</p>
+</template>

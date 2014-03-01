@@ -43,3 +43,13 @@ if Meteor.isClient
                 @.render 'login'
         yieldTemplates:
             'footer': {to: 'footer'}
+
+    @.route 'verify',
+        path: '/verify'
+        template: 'verify'
+        layoutTemplate: 'layout'
+        before: ->
+            if not Meteor.loggingIn() and not Meteor.user()
+                @.render 'login'
+        yieldTemplates:
+            'footer': {to: 'footer'}

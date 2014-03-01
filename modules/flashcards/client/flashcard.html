@@ -1,6 +1,9 @@
-
+<template name='flashcards'>
+  {{> flashCard}}
+</template>
 <template name="flashCard">
-  <div class="container">
+  <h1>Flashcard</h1>
+  <div class="container card">
     <div class="row">
       <!-- <div class="col-lg-offset-5"></div> -->
       <img class="col-sm-offset-4 col-sm-4" src="{{card.image}}" />
@@ -14,8 +17,8 @@
       <!-- <div class="col-sm-offset-3 col-lg-6"> -->
         {{#each card.options}}
         <!-- <div class="col-lg-1"></div> -->
-        <div class="col-sm-4 btn btn-default btn-large choice" style="font-size:2rem;">
-          Option Cool
+        <div class="col-sm-3 btn btn-default btn-large choice" style="font-size:2rem;">
+          {{translation}}
         </div>
         <!-- <div class="col-lg-1"></div> -->
         {{/each}}

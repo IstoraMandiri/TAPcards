@@ -4,12 +4,13 @@ generateCardAnswers = (cardId) ->
   destLang = 'zh' # change to user session
   card = TAP.cols.Cards.findOne({_id:cardId})
   if card
-    cards = TAP.cols.Cards.find({_id:{$ne:card?._id},category:card?.category}, {limit:3}).fetch()
     card.options = [
       _id: card._id
       translation: card.translation[destLang].word
       correct:true
     ]
+    cards = TAP.cols.Cards.find({_id:{$ne:card?._id},category:card?.category}).fetch()
+    cards = _.sample cards, 3
     for wrongCard in cards
       card.options.push 
         _id: wrongCard._id

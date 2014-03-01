@@ -17,10 +17,10 @@ label{
 }
 
 .glyphicon{
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
-#performance-review{
+#performance-subtitle{
 	margin-top: 30px;
 }
 
@@ -32,7 +32,7 @@ label{
 	font-weight: 500;
 }
 
-/*d3 - Line Chart*/
+/*Line Chart*/
 path { 
 	stroke: steelblue;
 	stroke-width: 2;
@@ -47,5 +47,48 @@ path {
 	shape-rendering: crispEdges;
 }
 
-/*d3 - Bubble Chart*/
+/*Bubble Chart*/
+#vis, svg#line-chart{
+  position: relative;
+}
+
+#bubble-background {
+  fill: none;
+  pointer-events: all;
+}
+
+.bubble-node {
+  fill: #DCE9BE;
+}
+
+.bubble-hover {
+  fill: #E8E9E7;
+}
+
+.bubble-selected {
+  fill: #CEE98F;
+  stroke: #CEE98F;
+  stroke-width: 1.5px;
+}
+
+.active {
+  color: #A6BA92
+}
+
+a.bubble-label {
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1em;
+  position: absolute;
+}
+
+
+.bubble-label .bubble-label-value {
+  font: 11px sans-serif;
+  white-space: nowrap;
+}
+
 

@@ -1,15 +1,17 @@
 <template name="profile">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-5">
-				<div class="profile-title">Personal Profile</div>
+		    <div class="col-xs-12 profile-title">Personal Profile
+		    </div>
+			<div class="col-sm-5 col-xs-10">				
 				<img id="profile-img" src="img/profile_default_img.jpg" style="width: 100px"/>
-				<button id="change-profile-picture" class="btn btn-default btn-xs">Change Profile Picture</button>
+				<div><button id="change-profile-picture" class="btn btn-default btn-xs">Change Picture</button>
+				</div>
 				<p><i class="glyphicon glyphicon-heart-empty"></i>[[CURRENT NAME]]<p>
 				<p><i class="glyphicon glyphicon-time"></i>[[JOINED TIME]]<p>
 				<p><i class="glyphicon glyphicon-hand-right"></i>[[CURRENT LEVEL]]</p>
 		    </div>
-		    <div class="col-xs-7">
+		    <div class="col-sm-7 col-xs-10">
 		    	<form id="form-registration" class="form-horizontal" role="form">          
 		    	  <div class="form-group">
 		    	    <label for="inputUserName" class="col-sm-2">User Name</label>
@@ -48,19 +50,23 @@
 		</div><!--/1st row-->
 
 	    <div class="row performance">
-	    	<div class="col-xs-12 profile-title">Performance Review</div>
+	    	<div class="col-xs-12">
+		    	<div class="profile-title">Performance Review</div>
 
-	    	<div id="linechart" class="col-xs-6">
-	    		<div class="performance-review">Language learning performance within one month
-	    		</div>
-	    		{{> lineChart}}
-	    	</div>
+		    	<div id="linechart">
+		    		<div class="performance-subtitle">Language learning performance within one month
+		    		</div>
+		    		{{> lineChart}}
+		    	</div>
 
-	    	<div id="bubblechart" class="col-xs-6">
-	    		<div class="performance-review">Language learning performance within one month
-	    		</div>
-	    		{{> bubbleChart}}
-	    	</div>
+		    	<div id="bubblechart" class="performance-subtitle">
+		    		<div class="performance-review">Most difficult words	
+		    		</div>
+		    		<div id="vis">
+		    			{{> bubbleChart}}
+		    		</div>
+		    	</div>
+	        </div>
         </div><!--/2nd row-->
 	</div> <!--/container-->
 </template>

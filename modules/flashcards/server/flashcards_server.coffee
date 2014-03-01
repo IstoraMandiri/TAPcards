@@ -1,7 +1,5 @@
 
-generateCardAnswers = (cardId) ->
-  # Session.get 'destinationLanguage', 'zh'
-  destLang = 'zh' # change to user session
+generateCardAnswers = (cardId, destLang) ->
   card = TAP.cols.Cards.findOne({_id:cardId})
   if card
     card.options = [
@@ -19,13 +17,18 @@ generateCardAnswers = (cardId) ->
   return card
 
 Meteor.methods
-  'generateNextCards' : ->
+  'generateNextCards' : (destLang) ->
+    console.log 'destlang is', destLang
     randomCat = _.sample TAP.cols.Categories.find().fetch()
     randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id}).fetch(), 10 # change to actual length
     randomCardIds = _.map randomCards, (card) -> card._id
     randomCardsWithAnswers = []
     for cardId in randomCardIds
-      randomCardsWithAnswers.push generateCardAnswers(cardId)
+      randomCardsWithAnswers.push generateCardAnswers(cardId,destLang)
     TAP.helpers.updateUserProfile @userId,
       $set:
         nextCards: randomCardsWithAnswers
+
+  'answer': (options) ->
+    console.log @userId, options
+    # log the correct answers

@@ -7,4 +7,4 @@ TAP.helpers =
     TAP.helpers.getProfile(userId)?._id
 
   'updateUserProfile': (userId, update) ->
-    TAP.cols.UserProfiles.update {_id:TAP.helpers.getProfileId(userId)}, update    
+    TAP.cols.UserProfiles.update {_id:TAP.helpers.getProfileId(userId)}, update

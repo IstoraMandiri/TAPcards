@@ -1,0 +1,11 @@
+.center{
+	margin:auto;
+	padding: 10px 0px 20px 30px;
+	width:70%;
+	background-color:#f8f8f8;
+	border-radius: 4px;
+}
+
+.introduction{
+	margin: 20px 10px;
+}

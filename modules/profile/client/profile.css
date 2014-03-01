@@ -2,10 +2,21 @@ label{
 	margin-bottom: 5px;
 }
 
-.blue{
+.blue, .red, .green, .yellow{
   color: white;
-  background-color: #6ECADC;
   border: none;
+}
+
+.red{
+  
+}
+
+.green{
+
+}
+
+.yellow{
+
 }
 
 #profile-img{
@@ -22,8 +33,12 @@ label{
 	margin-bottom: 10px;
 }
 
-.glyphicon{
+.glyphicon.glyphicon-forward{
 	margin-right: 5px;
+}
+
+.glyphicon.glyphicon-circle-arrow-right{
+  margin-left: 10px;
 }
 
 #performance-subtitle{

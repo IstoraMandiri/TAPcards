@@ -1,14 +1,15 @@
 <template name="menu">
 	<div class="center">
 <!-- 		<h1>{{greeting}}</h1> -->
-		<h1>Welcome on board!</h1>
 		
+		<h1 id="welcome-on-board">Welcome on board!</h1>
+
 		{{#if userCreatedProfile}}
-			<a class="btn btn-success" href="/selectLanguage">Start Learning</a>
+			<a class="btn btn-default red" href="/selectLanguage">Start Learning<i class="glyphicon glyphicon-circle-arrow-right"></i></a>
 		{{else}}
 			<h4 class="introduction">Haven't setup profile? Please click the button and start a wonderful journey!</h4>
-		{{/if}}
 
+		{{/if}}
 		<a class="btn btn-default blue" href="/profile"><i class="glyphicon glyphicon-forward"></i>Setup Profile</a>
 	</div>
 </template>

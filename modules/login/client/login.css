@@ -14,18 +14,18 @@
 	border-radius: 10px;
 	color: #f8f8f8;
 }
-.section-red{
+.section-red, .red{
 	background-color:#E01563;
 }
-.section-green{
+.section-green, .green{
 	background-color:#3EB991;
 }
 
-.section-yellow{
+.section-yellow, .yellow{
 	background-color:#E9A820;
 }
 
-.section-blue{
+.section-blue, .blue{
 	background-color: #6ECADC;
 }
 

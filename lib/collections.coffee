@@ -5,6 +5,9 @@ languageISOs = ['ABW','AFG','AGO','AIA','ALA','ALB','AND','ARE','ARG','ARM','ASM
 TAP.cols =  
   userProfiles: new Meteor.Collection 'userProfiles',
     schema: new SimpleSchema
+      cratedProfile: 
+        type: Boolean
+        defaultValue: false
       name: 
         type: String
         defaultValue: 'Anon'

@@ -1,3 +1,70 @@
 <template name="profile">
-	{{logToConsole}}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-5">
+				<div class="profile-title">Personal Profile</div>
+				<img id="profile-img" src="img/profile_default_img.jpg" style="width: 100px"/>
+				<button id="change-profile-picture" class="btn btn-default btn-xs">Change Profile Picture</button>
+				<p><i class="glyphicon glyphicon-heart-empty"></i>[[CURRENT NAME]]<p>
+				<p><i class="glyphicon glyphicon-time"></i>[[JOINED TIME]]<p>
+				<p><i class="glyphicon glyphicon-hand-right"></i>[[CURRENT LEVEL]]</p>
+		    </div>
+		    <div class="col-xs-7">
+		    	<form id="form-registration" class="form-horizontal" role="form">          
+		    	  <div class="form-group">
+		    	    <label for="inputUserName" class="col-sm-2">User Name</label>
+		    	    <div class="col-sm-10">
+		    	      <input type="text" class="form-control" id="inputFirstName">
+		    	    </div>
+		    	  </div>
+
+		    	  <div class="form-group">
+		    	    <label for="inputEmail" class="col-sm-2">Email Address</label>
+		    	    <div class="col-sm-10">
+		    	      <input type="email" class="form-control" id="inputEmail">
+		    	    </div>
+		    	  </div>
+
+		    	   <div class="form-group">
+		    	       <label for="selectLanguage" class="col-sm-2">Native Language</label>
+		    	       <div class="col-sm-10"> 
+		    	          <select id="selectLanguage" style="width: 100%">
+		    	          	<option>Chinese</option>
+		    	          	<option>English</option>
+		    	          	<option>French</option>
+		    	          	<option>German</option>
+		    	          	<option>Spanish</option>
+		    	          </select>
+		    	       </div>
+		    	   </div>
+
+		    	  <div class="form-group">
+		    	    <div class="col-sm-10">
+		    	      <button type="submit" class="btn btn-default submit-btn">Update Profile</button>
+		    	    </div>
+		    	  </div>
+		    	</form>
+		    </div>
+		</div><!--/1st row-->
+
+	    <div class="row performance">
+	    	<div class="col-xs-12 profile-title">Performance Review</div>
+
+	    	<div id="linechart" class="col-xs-6">
+	    		<div class="performance-review">Language learning performance within one month
+	    		</div>
+	    		{{> lineChart}}
+	    	</div>
+
+	    	<div id="bubblechart" class="col-xs-6">
+	    		<div class="performance-review">Language learning performance within one month
+	    		</div>
+	    		{{> bubbleChart}}
+	    	</div>
+        </div><!--/2nd row-->
+	</div> <!--/container-->
 </template>
+
+<template name="lineChart"></template>
+
+<template name="bubbleChart"></template>

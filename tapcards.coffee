@@ -1,7 +1,10 @@
 
 
 if Meteor.isClient
-  Template.home.greeting = -> 'You are running meteor'
+  
+  Meteor.startup ->
+    Meteor.call 'generateNextCards'
+
 
   Handlebars.registerHelper 'userProfile', -> TAP.cols.UserProfiles.findOne()
 

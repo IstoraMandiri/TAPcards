@@ -28,6 +28,10 @@ TAP.cols =
         autoValue : ->
           @field('correct').value + @field('wrong').value
         min: 0
+      nextCards: 
+        type: [String]
+        maxCount: 10
+        minCount: 0
 
 
   Languages: new Meteor.Collection 'languages',

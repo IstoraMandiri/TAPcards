@@ -7,6 +7,7 @@ TAP.cols =
     schema: new SimpleSchema
       createdProfile: 
         type: Boolean
+        optional:true
       name: 
         type: String
         defaultValue: 'Anon'
@@ -16,18 +17,24 @@ TAP.cols =
         optional:true
       correct: 
         type: Number
+        optional:true
+        min : 0
+        defaultValue:0
       wrong: 
         type: Number
+        optional:true
+        min : 0
+        defaultValue:0
       answered: 
         type: Number
         autoValue : ->
           @field('correct').value + @field('wrong').value
-        min: 0
+        optional:true
       nextCards: 
+        optional:true
         type: [Object]
         maxCount: 10
         minCount: 0
-        optional: true
       'nextCards.$':
         blackbox:true
 
@@ -68,9 +75,11 @@ TAP.cols =
         denyUpdate: true
       correct: 
         type: Number
+        defaultValue: 0
         min : 0
       wrong: 
         type: Number
+        defaultValue : 0
         min : 0
       answered: 
         type: Number

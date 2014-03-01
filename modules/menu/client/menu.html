@@ -1,11 +1,16 @@
 <template name="menu">
-	<h1>{{greeting}}</h1>
-	<a class="btn btn-primary" href="/profile">Profile</a>
-	{{#if userCreatedProfile}}
-		<a class="btn btn-success" href="/selectLanguage">Start Learning</a>
-	{{else}}
-		<p>You have not created a profile yet.  Please go to the Profile screen setup your profile.</p>
-	{{/if}}
+	<div class="center">
+<!-- 		<h1>{{greeting}}</h1> -->
+		<h1>Welcome on board!</h1>
+		
+		{{#if userCreatedProfile}}
+			<a class="btn btn-success" href="/selectLanguage">Start Learning</a>
+		{{else}}
+			<h4 class="introduction">Haven't setup profile? Please click the button and start a wonderful journey!</h4>
+		{{/if}}
+
+		<a class="btn btn-default blue" href="/profile"><i class="glyphicon glyphicon-forward"></i>Setup Profile</a>
+	</div>
 </template>
 
 <template name="selectLanguage">

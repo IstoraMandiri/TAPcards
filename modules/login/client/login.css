@@ -7,3 +7,32 @@
   padding-bottom: 15px;
   color:#333;
 }
+
+.section-red, .section-green, .section-yellow, .section-blue{
+	padding: 10px 10px;
+	margin: 10px 10px;
+	border-radius: 10px;
+	color: #f8f8f8;
+}
+.section-red{
+	background-color:#E01563;
+}
+.section-green{
+	background-color:#3EB991;
+}
+
+.section-yellow{
+	background-color:#E9A820;
+}
+
+.section-blue{
+	background-color: #6ECADC;
+}
+
+.intro-text{
+	color: #333;
+}
+
+.welcome-word{
+	padding: 10px 0px 20px 15px;
+}

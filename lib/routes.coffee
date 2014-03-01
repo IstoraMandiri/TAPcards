@@ -6,6 +6,9 @@ if Meteor.isClient
         template: 'menu'
         layoutTemplate: 'layout'
         before: ->
+            # if not TAP.cols.UserProfiles.findOne()?.createdProfile?
+            #     @.redirect '/profile'
+
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
 
@@ -25,7 +28,6 @@ if Meteor.isClient
             if Meteor.user()
                 @.redirect '/'
 
-
     @.route 'profile',
         path: '/profile'
         template: 'profile'
@@ -41,5 +43,25 @@ if Meteor.isClient
         before: ->
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
-        # yieldTemplates:
-        #     'footer': {to: 'footer'}
+            else
+              Meteor.startup ->
+                Meteor.call 'generateNextCards', Session.get('targetLanguage')
+
+    @.route 'verify',
+        path: '/verify'
+        template: 'verify'
+        layoutTemplate: 'layout'
+        before: ->
+            if not Meteor.loggingIn() and not Meteor.user()
+                @.redirect '/login'
+
+
+
+    @.route 'contribute',
+        path: '/contribute'
+        template: 'contribute'
+        layoutTemplate: 'layout'
+        before: ->
+            if not Meteor.loggingIn() and not Meteor.user()
+                @.redirect '/login'
+

@@ -1,0 +1,2 @@
+TAP.helpers.map = ->
+  

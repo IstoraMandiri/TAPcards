@@ -5,6 +5,7 @@
     "moment": {},
     "jquery-ui": {},
     "iron-router": {},
-    "collection2": {}
+    "collection2": {},
+    "autoform": {}
   }
 }

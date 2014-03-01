@@ -1,8 +1,8 @@
 {
   "packages": {
-    "jquery-ui": {},
     "accounts-ui-bootstrap-3": {},
     "bootstrap-3": {},
-    "moment": {}
+    "moment": {},
+    "jquery-ui": {}
   }
 }

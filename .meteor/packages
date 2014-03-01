@@ -9,11 +9,13 @@ insecure
 preserve-inputs
 d3
 coffeescript
-accounts-facebook
-accounts-ui
-bootstrap
-jquery-ui
 accounts-ui-bootstrap-3
 bootstrap-3
 moment
 collection2
+accounts-password
+jquery-ui
+accounts-google
+accounts-facebook
+accounts-weibo
+underscore

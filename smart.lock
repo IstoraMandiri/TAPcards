@@ -2,17 +2,12 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "jquery-ui": {},
       "accounts-ui-bootstrap-3": {},
       "bootstrap-3": {},
-      "moment": {}
+      "moment": {},
+      "jquery-ui": {}
     },
     "packages": {
-      "jquery-ui": {
-        "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",
-        "tag": "v1.9.2",
-        "commit": "c437d45edcf1367df8d5ffa8bad2867758030bd2"
-      },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
         "tag": "v0.2.5",
@@ -27,6 +22,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.5.1",
         "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
+      },
+      "jquery-ui": {
+        "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",
+        "tag": "v1.9.2",
+        "commit": "c437d45edcf1367df8d5ffa8bad2867758030bd2"
       }
     }
   }

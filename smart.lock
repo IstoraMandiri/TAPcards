@@ -6,7 +6,8 @@
       "bootstrap-3": {},
       "moment": {},
       "jquery-ui": {},
-      "iron-router": {}
+      "iron-router": {},
+      "collection2": {}
     },
     "packages": {
       "accounts-ui-bootstrap-3": {
@@ -33,6 +34,16 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.6.4",
         "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
+      },
+      "collection2": {
+        "git": "https://github.com/aldeed/meteor-collection2.git",
+        "tag": "v0.3.8",
+        "commit": "69aff2a21ba3c382f915e1f9dbcca2ad38edb6d5"
+      },
+      "simple-schema": {
+        "git": "https://github.com/aldeed/meteor-simple-schema.git",
+        "tag": "v0.2.39",
+        "commit": "02afc77cba60ce5829e453567ebac76e4b69bc81"
       }
     }
   }

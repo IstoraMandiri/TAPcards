@@ -32,7 +32,7 @@ if Meteor.isClient
         layoutTemplate: 'layout'
         before: ->
             if not Meteor.loggingIn() and not Meteor.user()
-                @.render 'login'
+                @.redirect '/login'
 
     @.route 'flashcards',
         path: '/flashcards'
@@ -40,6 +40,6 @@ if Meteor.isClient
         layoutTemplate: 'layout'
         before: ->
             if not Meteor.loggingIn() and not Meteor.user()
-                @.render 'login'
-        yieldTemplates:
-            'footer': {to: 'footer'}
+                @.redirect '/login'
+        # yieldTemplates:
+        #     'footer': {to: 'footer'}

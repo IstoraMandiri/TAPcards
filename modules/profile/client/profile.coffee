@@ -1,0 +1,1 @@
+Template.profile.logToConsole = -> console.log "profile template"

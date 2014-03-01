@@ -4,6 +4,7 @@
     "bootstrap-3": {},
     "moment": {},
     "jquery-ui": {},
-    "iron-router": {}
+    "iron-router": {},
+    "collection2": {}
   }
 }

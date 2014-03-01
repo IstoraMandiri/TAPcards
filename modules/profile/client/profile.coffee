@@ -1,3 +1,35 @@
+Template.profile.username = -> TAP.cols.UserProfiles.findOne()?.name
+
+Template.profile.email = -> Meteor.user().emails[0].address
+
+Template.profile.hasNotCreatedProfile = -> ! TAP.cols.UserProfiles.findOne()?.createdProfile
+
+Template.profile.language_list = ->
+  _.map TAP.cols.Languages.find().fetch(), (language) ->
+    obj =
+      _id: language._id
+      string: language.translation[language._id]
+
+Template.profile.events =
+  "change #inputFirstName" : (event, template) ->
+    if Meteor.userId()
+      TAP.helpers.updateUserProfile Meteor.userId(), {$set: {'name': event.target.value}}
+
+  "change #inputEmail" : (event, template) ->
+    console.log event.target.value
+    if Meteor.userId()
+      Meteor.users.update({_id: Meteor.userId()}, {$set: {'emails': [{address: event.target.value}]}})
+
+  "change #selectLanguage" : (event, template) ->
+    targetId = event.target.id
+    selectedOption = $("##{targetId}").find(':selected').val()
+    
+    if Meteor.userId()
+      TAP.helpers.updateUserProfile Meteor.userId(), {$set: {'createdProfile': true}}
+      console.log 'got here first'
+      TAP.helpers.updateUserProfile Meteor.userId(), {$set: {'language': selectedOption}}
+      console.log 'got here second'
+
 Template.lineChart.rendered = ->
   margin =
     top: 30

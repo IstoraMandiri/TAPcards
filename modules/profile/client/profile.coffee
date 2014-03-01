@@ -26,9 +26,7 @@ Template.profile.events =
     
     if Meteor.userId()
       TAP.helpers.updateUserProfile Meteor.userId(), {$set: {'createdProfile': true}}
-      console.log 'got here first'
       TAP.helpers.updateUserProfile Meteor.userId(), {$set: {'language': selectedOption}}
-      console.log 'got here second'
 
 Handlebars.registerHelper 'nativeLanguage', (id) ->
   userNativeLanguage = TAP.cols.UserProfiles.findOne()?.language

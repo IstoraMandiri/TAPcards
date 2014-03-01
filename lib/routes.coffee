@@ -6,6 +6,9 @@ if Meteor.isClient
         template: 'menu'
         layoutTemplate: 'layout'
         before: ->
+            # if not TAP.cols.UserProfiles.findOne()?.createdProfile?
+            #     @.redirect '/profile'
+
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
 
@@ -24,7 +27,6 @@ if Meteor.isClient
         before: ->
             if Meteor.user()
                 @.redirect '/'
-
 
     @.route 'profile',
         path: '/profile'

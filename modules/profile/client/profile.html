@@ -1,6 +1,9 @@
 <template name="profile">
 	<div class="container">
 		<div class="row">
+		    {{#if hasNotCreatedProfile}}
+		    	<h1>Welcome to the app! Please create your profile before using the rest of the app.</h1>
+		    {{/if}}
 		    <div class="col-xs-12 profile-title">Personal Profile
 		    </div>
 			<div class="col-sm-5 col-xs-10">				

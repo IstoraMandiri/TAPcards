@@ -52,26 +52,28 @@
 		    	</form>
 		    </div>
 		</div><!--/1st row-->
+		
+		{{#if hasCreatedProfile}}
+		    <div class="row performance">
+		    	<div class="col-xs-12">
+			    	<div class="profile-title">Performance Review</div>
 
-	    <div class="row performance">
-	    	<div class="col-xs-12">
-		    	<div class="profile-title">Performance Review</div>
+			    	<div id="linechart">
+			    		<div class="performance-subtitle">Language learning performance within one month
+			    		</div>
+			    		{{> lineChart}}
+			    	</div>
 
-		    	<div id="linechart">
-		    		<div class="performance-subtitle">Language learning performance within one month
-		    		</div>
-		    		{{> lineChart}}
-		    	</div>
-
-		    	<div id="bubblechart" class="performance-subtitle">
-		    		<div class="performance-subtitle">Most difficult words	
-		    		</div>
-		    		<div id="vis">
-		    			{{> bubbleChart}}
-		    		</div>
-		    	</div>
-	        </div>
-        </div><!--/2nd row-->
+			    	<div id="bubblechart" class="performance-subtitle">
+			    		<div class="performance-subtitle">Most difficult words	
+			    		</div>
+			    		<div id="vis">
+			    			{{> bubbleChart}}
+			    		</div>
+			    	</div>
+		        </div>
+	        </div><!--/2nd row-->
+        {{/if}}
 	</div> <!--/container-->
 </template>
 

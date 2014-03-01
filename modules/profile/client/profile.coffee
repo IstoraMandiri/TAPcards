@@ -3,6 +3,7 @@ Template.profile.username = -> TAP.cols.UserProfiles.findOne()?.name
 Template.profile.email = -> Meteor.user().emails[0].address
 
 Template.profile.hasNotCreatedProfile = -> ! TAP.cols.UserProfiles.findOne()?.createdProfile
+Template.profile.hasCreatedProfile = -> TAP.cols.UserProfiles.findOne()?.createdProfile
 
 Template.profile.language_list = ->
   _.map TAP.cols.Languages.find().fetch(), (language) ->

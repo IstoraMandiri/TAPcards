@@ -7,3 +7,12 @@ standard-app-packages
 autopublish
 insecure
 preserve-inputs
+d3
+coffeescript
+accounts-facebook
+accounts-ui
+bootstrap
+jquery-ui
+accounts-ui-bootstrap-3
+bootstrap-3
+moment

@@ -6,6 +6,7 @@
     "jquery-ui": {},
     "iron-router": {},
     "collection2": {},
-    "collectionFS": {}
+    "collectionFS": {},
+    "imagemagick": {}
   }
 }

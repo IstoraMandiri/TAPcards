@@ -8,3 +8,5 @@ TAP.helpers =
 
   'updateUserProfile': (userId, update) ->
     TAP.cols.UserProfiles.update {_id:TAP.helpers.getProfileId(userId)}, update
+
+  'randomCategory': -> _.sample(TAP.cols.Categories.find().fetch())?._id

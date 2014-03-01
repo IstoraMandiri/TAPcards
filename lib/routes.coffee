@@ -62,4 +62,8 @@ if Meteor.isClient
         before: ->
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
-
+            else
+                # random category
+                Session.set 'contribCard', TAP.cols.Cards.insert
+                    category:TAP.helpers.randomCategory()
+                    available:false

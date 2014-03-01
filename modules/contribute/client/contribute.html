@@ -2,9 +2,22 @@
   <div class="btn btn-default complete pull-right">
     ... or Skip
   </div>
-  <h1>Please Contribute!</h1>
-  <h2>Help the community!</h2>
-  <h3>{{newCard.category}}</h3>
-  <img src="{{getImage 'APD9j36y8Z4NtJx4A'}}"/>
-  <input type="file">
+  <h1>Contribute!</h1>
+  <h2>Take a photo of {{category}}</h2>
+  {{#if newCard.image}}
+    <div class="input-group" style='padding-bottom:20px;'>
+      <div class="input-group-btn">
+        <input class='name-it form-control' type="text" placeholder='What is this?'>
+        <div class="btn btn-success complete">Submit</div>
+      </div>
+    </div>
+  {{/if}}
+  <div class="upload-image">
+  <input type='file' class='overlap-file'/>
+  {{#if newCard.image}}
+    <img class='img-circle' src="{{getImage newCard.image}}"/>
+  {{else}}
+    <img class='camera-icon' src="/camera.png"/>
+  {{/if}}
+  </div>
 </template>

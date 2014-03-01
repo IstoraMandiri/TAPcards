@@ -1,0 +1,10 @@
+.upload-image .overlap-file{
+  opacity:0;
+  height:1px;
+}
+.upload-image .camera-icon{
+  max-width:200px;
+}
+.input-group .form-control.name-it{
+  width:300px;
+}

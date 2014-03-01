@@ -2,6 +2,12 @@ label{
 	margin-bottom: 5px;
 }
 
+.blue{
+  color: white;
+  background-color: #6ECADC;
+  border: none;
+}
+
 #profile-img{
 	margin: 15px 0px;
 	width: 125px;
@@ -17,11 +23,12 @@ label{
 }
 
 .glyphicon{
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
-#performance-review{
+#performance-subtitle{
 	margin-top: 30px;
+  font-weight: 500;
 }
 
 .performance, .performance-review{
@@ -32,9 +39,9 @@ label{
 	font-weight: 500;
 }
 
-/*d3 - Line Chart*/
+/*Line Chart*/
 path { 
-	stroke: steelblue;
+	stroke: #E9A820;
 	stroke-width: 2;
 	fill: none;
 }
@@ -47,5 +54,49 @@ path {
 	shape-rendering: crispEdges;
 }
 
-/*d3 - Bubble Chart*/
+/*Bubble Chart*/
+#vis, svg#line-chart{
+  position: relative;
+}
+
+#bubble-background {
+  fill: none;
+  pointer-events: all;
+}
+
+.bubble-node {
+/*  fill: #DCE9BE;*/
+  fill: #6ECADC;
+}
+
+.bubble-hover {
+  fill: #CEE98F;
+}
+
+.bubble-selected {
+  fill: #CEE98F;
+  stroke: #CEE98F;
+  stroke-width: 1.5px;
+}
+
+.active {
+  color: #A6BA92
+}
+
+a.bubble-label {
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1em;
+  position: absolute;
+}
+
+
+.bubble-label .bubble-label-value {
+  font: 11px sans-serif;
+  white-space: nowrap;
+}
+
 

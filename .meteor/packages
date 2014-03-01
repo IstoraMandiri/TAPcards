@@ -19,3 +19,4 @@ accounts-google
 accounts-facebook
 accounts-weibo
 underscore
+iron-router

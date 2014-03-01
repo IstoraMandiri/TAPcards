@@ -3,6 +3,7 @@
     "accounts-ui-bootstrap-3": {},
     "bootstrap-3": {},
     "moment": {},
-    "jquery-ui": {}
+    "jquery-ui": {},
+    "iron-router": {}
   }
 }

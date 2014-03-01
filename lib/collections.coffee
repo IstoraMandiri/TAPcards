@@ -136,6 +136,7 @@ if Meteor.isServer
 
   Meteor.startup ->
     if TAP.cols.Languages.find().count() is 0
+      console.log 'inserting languages'
       TAP.cols.Languages.insert
         _id: 'en'
         translation:
@@ -147,21 +148,32 @@ if Meteor.isServer
         translation:
           'en':'Chinese'
           'zh':'中國'
-    # if TAP.cols.Categories.find().count() is 0
-  #     catId1 = TAP.cols.Categories.insert
-  #       translation:
-  #         'ABW':'Food'
-  #         'AFG':'Food(translated)'
-  #     catId2 = TAP.cols.Categories.insert
-  #       translation:
-  #         'ABW':'Cars'
-  #         'AFG':'Cars(translated)'
 
-  #     TAP.cols.Categories.insert
-  #       translation:
-  #         'ABW':'Cars'
-  #         'AFG':'Cars(translated)'
-      
+    if TAP.cols.Categories.find().count() is 0
+      console.log 'inserting cats + cards'
+      catId1 = TAP.cols.Categories.insert
+        translation:
+          'en':'Food'
+          'zh':'Food(translated)'
+      catId2 = TAP.cols.Categories.insert
+        translation:
+          'en':'Cars'
+          'zh':'Cars(translated)'
 
+      for i in [0..30]
+        TAP.cols.Cards.insert
+          image: 'test.jpeg'
+          category: catId1
+          translation:
+            'en':"Food #{i}"
+            'zh':"食物 #{i}"
+
+      for i in [0..30]
+        TAP.cols.Cards.insert
+          image: 'test.jpeg'
+          category: catId2
+          translation:
+            'en':"Car #{i}"
+            'zh':"汽車 #{i}"
 
 

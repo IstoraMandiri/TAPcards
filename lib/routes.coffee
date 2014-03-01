@@ -44,3 +44,22 @@ if Meteor.isClient
             else
               Meteor.startup ->
                 Meteor.call 'generateNextCards', Session.get('targetLanguage')
+
+    @.route 'verify',
+        path: '/verify'
+        template: 'verify'
+        layoutTemplate: 'layout'
+        before: ->
+            if not Meteor.loggingIn() and not Meteor.user()
+                @.redirect '/login'
+
+
+
+    @.route 'contribute',
+        path: '/contribute'
+        template: 'contribute'
+        layoutTemplate: 'layout'
+        before: ->
+            if not Meteor.loggingIn() and not Meteor.user()
+                @.redirect '/login'
+

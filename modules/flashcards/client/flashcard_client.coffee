@@ -30,7 +30,12 @@ Template.flashCard.events =
       $set: 
         'nextCards':nextCards
 
-  'click .complete' : -> 
+  'click .complete' : ->
+
     TAP.helpers.updateUserProfile Meteor.userId(),
       $pull: 
         nextCards: {_id:Session.get('currentCard')}
+
+    if TAP.helpers.getProfile(Meteor.userId())?.nextCards.length is 0
+      Router.go '/verify'
+

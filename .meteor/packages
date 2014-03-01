@@ -9,7 +9,6 @@ insecure
 preserve-inputs
 d3
 coffeescript
-accounts-ui-bootstrap-3
 bootstrap-3
 moment
 collection2
@@ -20,3 +19,4 @@ accounts-facebook
 accounts-weibo
 underscore
 iron-router
+accounts-ui-bootstrap-3

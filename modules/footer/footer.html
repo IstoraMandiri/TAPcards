@@ -1,10 +1,24 @@
 <template name="footer">
   <div class="footer navbar-fixed-bottom">
     <div class="container row-fluid">
-      <div class="label label-info col-sm-3" style="font-size: 1.5rem;"> Level 7 </div>
-      <div class="progress col-sm-9">
-        <div class="progress-bar progress-bar-success" role="progress-bar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-          
+      <div class="row">
+        <div class="col-xs-2 col-xs-offset-2">
+          <div class="label label-info" style="font-size: 1.5rem;"> Level 7 </div>
+          <!-- <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progress-bar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div> -->
+     
+        </div>
+        <div class="col-xs-2">
+          <label>Correct</label>
+          <div class="correct label label-success label-large">789</div>
+        </div>
+        <div class="col-xs-2">
+          <label>Wrong</label>
+          <div class="wrong label label-danger label-large">123</div>
+        </div>
+        <div class="col-xs-3">
+          <label>Contribution</label>
+          <div class="label label-default label-large">56</div>
         </div>
       </div>
     </div>

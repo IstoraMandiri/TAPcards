@@ -7,8 +7,8 @@
 				<img id="profile-img" src="img/profile_default_img.jpg" style="width: 100px"/>
 				<div><button id="change-profile-picture" class="btn btn-default btn-xs blue">Change Picture</button>
 				</div>
-				<p><i class="glyphicon glyphicon-heart-empty"></i>[[CURRENT NAME]]<p>
-				<p><i class="glyphicon glyphicon-time"></i>[[JOINED TIME]]<p>
+				<!-- <p><i class="glyphicon glyphicon-heart-empty"></i>[[CURRENT NAME]]<p>
+				<p><i class="glyphicon glyphicon-time"></i>[[JOINED TIME]]<p> -->
 				<p><i class="glyphicon glyphicon-hand-right"></i>[[CURRENT LEVEL]]</p>
 		    </div>
 		    <div class="col-sm-7 col-xs-10">
@@ -35,7 +35,7 @@
 		    	          		<option value=""></option>
 		    	          	{{/if}}
 		    	          	{{#each language_list}}
-								<option value="{{_id}}">{{string}}</option>
+								<option value="{{_id}}" {{#if nativeLanguage _id}}selected="selected"{{/if}}>{{string}}</option>
 		    	          	{{/each}}
 		    	          </select>
 		    	       </div>

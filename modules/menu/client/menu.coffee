@@ -9,5 +9,4 @@ Template.selectLanguage.language_list = ->
 
 Template.selectLanguage.events =
 	"click .btn-success" : (event, template) ->
-		userLanguage = TAP.cols.UserProfiles.findOne()?.language
-		Session.set 'targetLanguage', userLanguage
+		Session.set 'targetLanguage', @_id

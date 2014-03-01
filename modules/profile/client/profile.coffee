@@ -30,6 +30,11 @@ Template.profile.events =
       TAP.helpers.updateUserProfile Meteor.userId(), {$set: {'language': selectedOption}}
       console.log 'got here second'
 
+Handlebars.registerHelper 'nativeLanguage', (id) ->
+  userNativeLanguage = TAP.cols.UserProfiles.findOne()?.language
+  if id is userNativeLanguage
+    return true
+
 Template.lineChart.rendered = ->
   margin =
     top: 30

@@ -5,24 +5,23 @@
   <h1>Flashcard</h1>
   <div class="container card">
     <div class="row">
-      <!-- <div class="col-lg-offset-5"></div> -->
       <img class="col-sm-offset-4 col-sm-4" src="{{card.image}}" />
     </div>
     <br />
     <br />
-    <br />
-    <br />
-    <br />
+    {{#if answered}}
+      <p>It was a {{cardTranslations.mine}}</p>
+      <p>You answered {{lastAnswer.translation}}</p>
+      <p>You answered {{#if card.correctAnswer}}correctly{{else}}incorrectly{{/if}}</p>
+      <div class="btn btn-default complete">Next Question</div>
+    {{else}}
     <div class="row">
-      <!-- <div class="col-sm-offset-3 col-lg-6"> -->
-        {{#each card.options}}
-        <!-- <div class="col-lg-1"></div> -->
+      {{#each card.options}}
         <div class="col-sm-3 btn btn-default btn-large choice" style="font-size:2rem;">
           {{translation}}
         </div>
-        <!-- <div class="col-lg-1"></div> -->
-        {{/each}}
-      <!-- </div> -->
+      {{/each}}
     </div>
+    {{/if}}
   </div>
 </template>

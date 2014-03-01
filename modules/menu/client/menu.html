@@ -1,3 +1,15 @@
 <template name="menu">
-	{{logToConsole}}
+	<h1>{{greeting}}</h1>
+	<a class="btn btn-primary" href="/profile">Profile</a>
+	{{#if userCreatedProfile}}
+		<a class="btn btn-success" href="/selectLanguage">Start Learning</a>
+	{{else}}
+		<p>You have not created a profile yet.  Please go to the Profile screen to </p>
+	{{/if}}
+</template>
+
+<template name="selectLanguage">
+	{{#each language_list}}
+		<a id="{{_id}}" class="btn btn-success" href="/flashcards">{{string}}</a>
+	{{/each}}
 </template>

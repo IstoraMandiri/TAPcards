@@ -7,7 +7,6 @@ TAP.cols =
     schema: new SimpleSchema
       createdProfile: 
         type: Boolean
-        defaultValue: false
       name: 
         type: String
         defaultValue: 'Anon'
@@ -17,12 +16,8 @@ TAP.cols =
         optional:true
       correct: 
         type: Number
-        defaultValue: 0
-        min : 0
       wrong: 
         type: Number
-        defaultValue : 0
-        min : 0
       answered: 
         type: Number
         autoValue : ->
@@ -32,6 +27,7 @@ TAP.cols =
         type: [Object]
         maxCount: 10
         minCount: 0
+        optional: true
       'nextCards.$':
         blackbox:true
 
@@ -72,11 +68,9 @@ TAP.cols =
         denyUpdate: true
       correct: 
         type: Number
-        defaultValue: 0
         min : 0
       wrong: 
         type: Number
-        defaultValue : 0
         min : 0
       answered: 
         type: Number
@@ -122,7 +116,7 @@ if Meteor.isClient
     Categories: Meteor.subscribe 'Categories'
     Cards: Meteor.subscribe 'Cards'
     Activity: Meteor.subscribe 'Activity'
-
+    Languages: Meteor.subscribe 'Languages'
 
 if Meteor.isServer
   TAP.pubs =
@@ -132,6 +126,7 @@ if Meteor.isServer
     Categories: Meteor.publish 'Categories', -> TAP.cols.Categories.find()
     Cards: Meteor.publish 'Cards', -> TAP.cols.Cards.find()
     Activity: Meteor.publish 'Activity', -> TAP.cols.Activity.find()
+    Languages: Meteor.publish 'Languages', -> TAP.cols.Languages.find()
 
   Accounts.onCreateUser (options, user) ->
     # console.log options

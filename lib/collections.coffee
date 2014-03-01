@@ -29,9 +29,11 @@ TAP.cols =
           @field('correct').value + @field('wrong').value
         min: 0
       nextCards: 
-        type: [String]
+        type: [Object]
         maxCount: 10
         minCount: 0
+      'nextCards.$':
+        blackbox:true
 
 
   Languages: new Meteor.Collection 'languages',
@@ -168,15 +170,23 @@ if Meteor.isServer
           image: 'test.jpeg'
           category: catId1
           translation:
-            'en':"Food #{i}"
-            'zh':"食物 #{i}"
+            'en':
+              word:"Food #{i}"
+              verified: true
+            'zh':
+              word:"食物 #{i}"
+              verified: true
 
       for i in [0..30]
         TAP.cols.Cards.insert
           image: 'test.jpeg'
           category: catId2
           translation:
-            'en':"Car #{i}"
-            'zh':"汽車 #{i}"
+            'en':
+              word: "Car #{i}"
+              verified: true
+            'zh':
+              word: "汽車 #{i}"
+              verified: true
 
 

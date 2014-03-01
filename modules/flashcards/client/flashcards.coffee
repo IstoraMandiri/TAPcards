@@ -1,0 +1,1 @@
+Template.flashcards.logToConsole = -> console.log 'flashcards template'

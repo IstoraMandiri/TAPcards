@@ -18,9 +18,15 @@ if Meteor.isClient
     @.route 'profile',
     	path: '/profile'
     	template: 'profile'
+    	before: ->
+    		if not Meteor.loggingIn() and not Meteor.user()
+    			@.render 'login'
 
     @.route 'flashcards',
     	path: '/flashcards'
     	template: 'flashcards'
+    	before: ->
+    		if not Meteor.loggingIn() and not Meteor.user()
+    			@.render 'login'
     	yieldTemplates:
     		'footer': {to: 'footer'}

@@ -1,0 +1,1 @@
+Template.login.logToConsole = -> console.log 'login template'

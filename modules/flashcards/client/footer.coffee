@@ -1,0 +1,1 @@
+Template.footer.logToConsole = -> console.log 'footer template'

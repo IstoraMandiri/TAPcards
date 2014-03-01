@@ -1,0 +1,1 @@
+Template.menu.logToConsole = -> console.log "menu template"

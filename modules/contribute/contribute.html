@@ -1,0 +1,45 @@
+<template name="contributePickCategory">
+  <div class="row-fluid container">
+    <div class="jumbotron">
+      <p class="col-sm-offset-1">Contribute your knowledge to TAPCards Categories?</p>
+      <h1 class="col-sm-offset-1 col-sm-8">Fruit</h1>
+      <br /><br />
+      <div class="col-sm-offset-1 btn btn-default btn-large" style="font-size: 2rem">Give me another Category</div>
+    </div>
+    <!-- <div class="row"> -->
+    {{#each cards}}
+    <div class="label label-default col-sm-offset-1" style="font-size: 3rem;">One Fruit</div>
+    {{/each}}
+    <!-- </div> -->
+    <br /><br /><br />
+
+    <div class="btn btn-success btn-large col-sm-offset-1 col-sm-2" style="font-size: 2rem">Contribute</div>
+    <!-- </div> -->
+  </div>
+</template>
+
+<template name="contributeUpload">
+  <div class="container">
+    <div class="jumbotron">
+      <div class="col-sm-offset-1 col-sm-8" style="font-size:3rem;"><b>Fruit</b></div>
+      <br /><br /><br /><br /><br /><br />
+      <form>
+        <div class="form-group">
+          <input type="text" />
+          <div class="label label-default">Required</div>
+        </div>
+        <br /><br />
+        <div class="form-group">
+          <label for="image">Upload Image</label>
+          <div class="label label-default">Required</div>
+          <input id="image" type="file"/>
+        </div>
+        <div class="form-group">
+          <label for="audio">Upload Audio</label>
+          <input id="audio" type="file" />
+        </div>
+
+      </form>
+    </div>
+  </div>
+</template>

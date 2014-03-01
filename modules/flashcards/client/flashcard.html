@@ -1,0 +1,13 @@
+
+<template name="flashCard">
+  <div class="container">
+    <img src="{{card.image}}" />
+    <h3>
+      <div class="row">
+        {{#each card.choices}}
+        <div class="col-md-4 label label-default choice">{{string}}</div>{{/each}}
+        
+      </div>
+    </h3>
+  </div>
+</template>

@@ -6,7 +6,7 @@ Template.lineChart.rendered = ->
     left: 30
 
   width = 800 - margin.left - margin.right
-  height = 250 - margin.top - margin.bottom
+  height = 300 - margin.top - margin.bottom
 
   parseDate = d3.time.format("%d-%b-%y").parse
   x = d3.time.scale().range([
@@ -53,13 +53,13 @@ Template.lineChart.rendered = ->
     # Add the valueline path.
     svg.append("path").attr("class", "line").attr "d", valueline(data)
     # Add the valueline2 path.
-    svg.append("path").attr("class", "line").style("stroke", "#d44950").attr "d", valueline2(data)
+    svg.append("path").attr("class", "line").style("stroke", "#E01563").attr "d", valueline2(data)
     # Add the X Axis
     svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + height + ")").call xAxis
     # Add the Y Axis
     svg.append("g").attr("class", "y axis").call yAxis
-    svg.append("text").attr("transform", "translate(" + (width + 3) + "," + y(data[0].open) + ")").attr("dy", ".35em").attr("text-anchor", "start").style("fill", "#d44950").text "Open"
-    svg.append("text").attr("transform", "translate(" + (width + 3) + "," + y(data[0].close) + ")").attr("dy", ".35em").attr("text-anchor", "start").style("fill", "steelblue").text "Close"
+    svg.append("text").attr("transform", "translate(" + (width + 3) + "," + y(data[0].open) + ")").attr("dy", ".35em").attr("text-anchor", "start").style("fill", "#E01563").text "Open"
+    svg.append("text").attr("transform", "translate(" + (width + 3) + "," + y(data[0].close) + ")").attr("dy", ".35em").attr("text-anchor", "start").style("fill", "#E9A820").text "Close"
     return
 
   return
@@ -73,7 +73,7 @@ Template.bubbleChart.rendered = ->
     # standard variables accessible to
     # the rest of the functions inside Bubbles
     width = 800
-    height = 250
+    height = 300
     data = []
     node = null
     label = null

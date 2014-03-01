@@ -2,6 +2,12 @@ label{
 	margin-bottom: 5px;
 }
 
+.blue{
+  color: white;
+  background-color: #6ECADC;
+  border: none;
+}
+
 #profile-img{
 	margin: 15px 0px;
 	width: 125px;
@@ -22,6 +28,7 @@ label{
 
 #performance-subtitle{
 	margin-top: 30px;
+  font-weight: 500;
 }
 
 .performance, .performance-review{
@@ -34,7 +41,7 @@ label{
 
 /*Line Chart*/
 path { 
-	stroke: steelblue;
+	stroke: #E9A820;
 	stroke-width: 2;
 	fill: none;
 }
@@ -58,11 +65,12 @@ path {
 }
 
 .bubble-node {
-  fill: #DCE9BE;
+/*  fill: #DCE9BE;*/
+  fill: #6ECADC;
 }
 
 .bubble-hover {
-  fill: #E8E9E7;
+  fill: #CEE98F;
 }
 
 .bubble-selected {

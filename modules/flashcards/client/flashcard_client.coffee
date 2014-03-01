@@ -18,10 +18,12 @@ Template.flashCard.lastAnswer = -> Session.get 'lastAnswer'
 Template.flashCard.events = 
   'click .choice' : (event) ->
     $card = $(event.target).parents('.card')
+    choice = $(event.target)
     Session.set 'lastAnswer', @
     Meteor.call 'answer',
       answeredCard : @_id
       currentCard : Session.get 'currentCard'
+      correct: @correct
 
     nextCards = TAP.helpers.getProfile(Meteor.userId())?.nextCards
     nextCards[0].correctAnswer = @correct or false

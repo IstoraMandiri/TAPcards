@@ -31,4 +31,30 @@ Meteor.methods
 
   'answer': (options) ->
     console.log @userId, options
+    
+    # insert one activity
+    TAP.cols.Activity.insert
+      type: "answer"
+      user: @userId
+      cardId: options.currentCard
+
+    # update user correct/wrong
+    if options.correct
+      TAP.cols.UserProfiles.update _id: @userId, 
+        $inc: 
+          correct: 1
+    else TAP.cols.UserProfiles.update _id: @userId, 
+        $inc: 
+          wrong: 1
+
+    #update question correct/wrong
+    if options.correct
+      TAP.cols.Cards.update _id: options: answeredCard,
+        $inc:
+          correct: 1
+    else
+      TAP.cols.Cards.update _id: options: answeredCard,
+        $inc:
+          wrong: 1
+
     # log the correct answers

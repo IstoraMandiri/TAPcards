@@ -30,31 +30,45 @@ Meteor.methods
         nextCards: randomCardsWithAnswers
 
   'answer': (options) ->
-    console.log @userId, options
-    
-    # insert one activity
-    TAP.cols.Activity.insert
-      type: "answer"
-      user: @userId
-      cardId: options.currentCard
-
+    console.log 'options', @userId, options
+    card = TAP.cols.Cards.findOne({_id:options.answeredCard})
+    profile_id = TAP.helpers.getProfileId @userId
     # update user correct/wrong
+    console.log 'updating profile', profile_id
     if options.correct
-      TAP.cols.UserProfiles.update _id: @userId, 
+      TAP.helpers.updateUserProfile @userId, 
         $inc: 
           correct: 1
-    else TAP.cols.UserProfiles.update _id: @userId, 
+    else 
+      TAP.helpers.updateUserProfile @userId, 
         $inc: 
           wrong: 1
 
     #update question correct/wrong
     if options.correct
-      TAP.cols.Cards.update _id: options: answeredCard,
+      TAP.cols.Cards.update {_id: options.currentCard},
         $inc:
           correct: 1
     else
-      TAP.cols.Cards.update _id: options: answeredCard,
+      TAP.cols.Cards.update {_id: options.currentCard},
         $inc:
           wrong: 1
 
     # log the correct answers
+    profile = TAP.helpers.getProfile @userId
+
+    user =
+      _id: @userId
+      profile:
+        _id:profile._id
+        answered: profile.answered
+        correct: profile.correct
+        wrong: profile.wrong 
+
+    # insert one activity
+    TAP.cols.Activity.insert
+      type: "answer"
+      user: @userId
+      cardId: options.currentCard
+      submission: options.answeredCard
+      correct: options.correct

@@ -19,17 +19,10 @@ TAP.cols =
         type: Number
         optional:true
         min : 0
-        defaultValue:0
       wrong: 
         type: Number
         optional:true
         min : 0
-        defaultValue:0
-      answered: 
-        type: Number
-        autoValue : ->
-          @field('correct').value + @field('wrong').value
-        optional:true
       nextCards: 
         optional:true
         type: [Object]
@@ -96,8 +89,7 @@ TAP.cols =
         type: String
         allowedValues: ['verify','answer']
       user:
-        type: Object
-        blackbox: true
+        type: String
       cardId:
         type: String
       submission: # string

@@ -1,0 +1,9 @@
+#configure-login-service-dialog-modal{
+  z-index:2000;
+}
+
+.login-buttons > .nav > li > a{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color:#333;
+}

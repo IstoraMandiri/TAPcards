@@ -7,12 +7,27 @@
 </body>
 
 <template name='layout'>
+  <div class="container">
+    
+  </div>
+  {{> navbar}}
   {{yield}}
+</template>
+
+<template name='navbar'>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      {{> login}}  
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Home</a>
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <template name='home'>
   <h1>{{greeting}}</h1>
-  {{> login}}
 </template>
 
 <template name='type_your_template_here'>

@@ -1,0 +1,36 @@
+<template name="verify_card">
+	<form role="form">
+		<input type="text">
+		<h1> APPLE?</h1><!-- name: Only display if exists --> 
+		<div class="form-group">
+			<img src="test.jpg"> <!-- Card image --> 
+			<h1> FRUIT?</h1><!-- category --> 
+			<div class="row">
+				<div class="col-xs-6">
+					<button type="submit" class="btn btn-primary">Yes</button>
+				</div>
+				<div class="col-xs-6">
+					<button type="submit" class="btn btn-primary">No</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	{{>footer}}
+</template>
+
+<!-- <template name="landing_login">
+  <div id="login-screen" class="container">
+    <h1>Diversity Charity Event</h1>
+    {{#unless waitingForEmailVerification}}
+      {{> landing_login_form}}
+    {{else}}
+      <h2>Thank you for Registering</h2>
+      <hr>
+      <h3>Please check your inbox to complete the registration process</h3>
+      <h3>You may need to check your Junk Email folder</h3>
+      <hr>
+      <div class="btn btn-lg btn-primary btn-block login">Back to Login</div>
+    {{/unless}}
+  </div>
+</template>
+ -->

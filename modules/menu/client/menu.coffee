@@ -8,5 +8,5 @@ Template.selectLanguage.language_list = ->
 			string: language.translation[userLanguage]
 
 Template.selectLanguage.events =
-	"click .btn-success" : (event, template) ->
+	"click .learn" : (event, template) ->
 		Session.set 'targetLanguage', @_id

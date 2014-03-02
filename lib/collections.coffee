@@ -181,28 +181,26 @@ if Meteor.isServer
         TAP.cols.Cards.insert
           image: 'test.jpeg'
           category: catId1
+          available:true
           translation:
             'en':
               word:"Food #{i}"
               verified: true
-              available: true
             'zh':
               word:"食物 #{i}"
               verified: true
-              available: true
 
       for i in [0..30]
         TAP.cols.Cards.insert
           image: 'test.jpeg'
           category: catId2
+          available:true
           translation:
             'en':
               word: "Car #{i}"
               verified: true
-              available: true
             'zh':
               word: "汽車 #{i}"
               verified: true
-              available: true
 
 

@@ -1,21 +1,32 @@
 <template name='verify'>
   <h1>Please Verify this Card to continue</h1>
+  <div class="btn btn-default skip pull-right">
+    ... or Skip
+  </div>
+
   <div class="row">
     {{#if thisWord}}
       <h2>{{thisWord}} ?</h2>
     {{else}}
-      What is this? <input type='text'/>
+      <div class="input-group" style='padding-bottom:20px;'>
+        <div class="input-group-btn">
+          <input class='name-it form-control' type="text" placeholder='What is this?'>
+          <div class="btn btn-success save">Submit</div>
+        </div>
+      </div>
     {{/if}}
     </div>
   <div class="row">
     <img class='img-rounded' src="{{getImage card.image}}"/>
   </div>
-  <div class="div">
-    <div class="btn btn-success good">
-      Correct
+  {{#if thisWord}}
+    <div class="div">
+      <div class="btn btn-success good">
+        Correct
+      </div>
+      <div class="btn btn-danger bad">
+        Incorrect
+      </div>   
     </div>
-    <div class="btn btn-danger bad">
-      Incorrect
-    </div>   
-  </div>
+  {{/if}}
 </template>

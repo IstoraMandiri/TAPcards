@@ -9,7 +9,6 @@ generateCardAnswers = (cardId, destLang, userId) ->
     ]
     query = {}
     query["translation.#{destLang}.verified"] = true
-    console.log query
     cards = TAP.cols.Cards.find({_id:{$ne:card?._id},category:card?.category, query}).fetch()
     cards = _.sample cards, 3
     for wrongCard in cards
@@ -25,7 +24,7 @@ Meteor.methods
     randomCat = _.sample TAP.cols.Categories.find().fetch()
     query = {}
     query["translation.#{destLang}.verified"] = true
-    randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id,query}).fetch(), 10 # change to actual length
+    randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id,query}).fetch(), 2 # change to actual length
     randomCardIds = _.map randomCards, (card) -> card._id
     randomCardsWithAnswers = []
     for cardId in randomCardIds

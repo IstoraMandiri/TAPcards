@@ -39,7 +39,7 @@ Template.lineChart.rendered = ->
     top: 30
     right: 40
     bottom: 30
-    left: 30
+    left: 40
 
   width = 800 - margin.left - margin.right
   height = 300 - margin.top - margin.bottom

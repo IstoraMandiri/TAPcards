@@ -39,3 +39,5 @@ Template.flashCard.events =
     if TAP.helpers.getProfile(Meteor.userId())?.nextCards.length is 0
       Router.go '/verify'
 
+    if TAP.cols.UserProfiles.findOne()?.nextCards.length is 0
+      Session.set 'learning', false

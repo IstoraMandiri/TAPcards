@@ -1,6 +1,4 @@
 .center{
-/*	margin:auto;
-	padding: 10px 0px 20px 30px;*/
 	margin: 0px auto 0px auto;
 	width:80%;
 	text-align: center;
@@ -8,6 +6,15 @@
 	background-color:#f8f8f8;
 	border-radius: 4px;
 	padding: 20px 0px;
+}
+
+.left{
+	margin: 0px auto 0px auto;
+	width:80%;
+	vertical-align: middle;
+	background-color:#f8f8f8;
+	border-radius: 4px;
+	padding: 20px 20px;
 }
 
 .introduction{
@@ -21,4 +28,16 @@
 
 .or{
 	margin: 0px 10px;
+}
+
+ul#contibute-file-guide{
+	list-style: none;
+}
+
+ul#contibute-file-guide li{
+	margin-top: 8px;
+}
+
+.contribute-policy{
+	padding-left: 10px;
 }

@@ -1,3 +1,9 @@
+.answer-blue{
+	color: #6ECADC;
+	font-size: 16px;
+	font-weight: 600;
+}
+
 .answer-green{
 	color: #3EB991;
 	font-size: 16px;
@@ -9,7 +15,14 @@
 }
 
 #flashcard-img{
-	margin-left: 25%;
 	margin-bottom: 30px;
 	margin-top: 30px;
+}
+
+img#flashcard-img.img-responsive{
+	display: inline;
+}
+
+.choice{
+	margin-top: 5px;
 }

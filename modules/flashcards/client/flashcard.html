@@ -9,17 +9,17 @@
         <img id="flashcard-img" class="img-responsive" src="{{card.image}}" />
       </div>
       {{#if answered}}
-        <h4>It was a {{cardTranslations.mine}}</h4>
-        <h4>You picked up {{lastAnswer.translation}}</h4>
+        <h4>It was a <span class="answer-blue">{{cardTranslations.mine}}</span></h4>
+        <h4>You picked up <span class="answer-blue">{{lastAnswer.translation}}</span></h4>
         <h4>You answered {{#if card.correctAnswer}}<span class="answer-green">correctly</span>{{else}}<span class="answer-red">incorrectly</span>{{/if}}</h4>
-        <div class="btn btn-default complete">Next Question</div>
+        <div class="btn btn-default complete blue">Next Question</div>
       {{else}}
 
       <div class="row">
         {{#each card.options}}
-          <div class="btn btn-default choice blue" style="font-size:2rem;">
+          <button class="btn btn-default choice blue">
             {{translation}}
-          </div>
+          </button>
         {{/each}}
       </div>
       {{/if}}

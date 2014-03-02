@@ -31,6 +31,9 @@ if Meteor.isServer
         type: String
         allowedValues: languageISOs
         optional:true
+      image:
+        type: String
+        optional: true
       correct: 
         type: Number
         optional:true

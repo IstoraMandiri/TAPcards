@@ -5,6 +5,8 @@ Template.profile.email = -> Meteor.user().emails[0].address
 Template.profile.hasNotCreatedProfile = -> ! TAP.cols.UserProfiles.findOne()?.createdProfile
 Template.profile.hasCreatedProfile = -> TAP.cols.UserProfiles.findOne()?.createdProfile
 
+Template.profile.image = -> TAP.cols.UserProfiles.findOne()?.image
+
 Template.profile.language_list = ->
   _.map TAP.cols.Languages.find().fetch(), (language) ->
     obj =
@@ -12,6 +14,13 @@ Template.profile.language_list = ->
       string: language.translation[language._id]
 
 Template.profile.events =
+  "change #change-profile-picture" : (e) ->
+    files = e.target.files
+    newFile = TAP.cols.Files.storeFile(files[0])
+    TAP.helpers.updateUserProfile Meteor.userId(),
+      $set:
+        image:newFile
+
   "change #inputFirstName" : (event, template) ->
     if Meteor.userId()
       TAP.helpers.updateUserProfile Meteor.userId(), {$set: {'name': event.target.value}}
@@ -68,8 +77,9 @@ Template.lineChart.rendered = ->
   svg = d3.select("div#linechart").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).attr("id", "line-chart").append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
   
   # Get the data
-  d3.csv "data2b.csv", (error, data) ->
+  d3.csv "/data/data2b.csv", (error, data) ->
     data.forEach (d) ->
+      console.log d
       d.date = parseDate(d.date)
       d.close = +d.close
       d.open = +d.open

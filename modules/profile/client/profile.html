@@ -6,13 +6,19 @@
 		    {{/if}}
 		    <div class="col-xs-12 profile-title">Personal Profile
 		    </div>
-			<div class="col-sm-5 col-xs-10">				
-				<img id="profile-img" src="img/profile_default_img.jpg" style="width: 100px"/>
-				<div><button id="change-profile-picture" class="btn btn-default btn-xs blue">Change Picture</button>
+			<div class="col-sm-5 col-xs-10">
+				{{#if image}}
+				<img id="profile-img" src="{{getProfileImage image}}" style="width: 120px"/>
+				{{else}}				
+				<img id="profile-img" src="img/profile_default_img.jpg" style="width: 120px"/>
+				{{/if}}
+				<div>
+				<small>Change Image</small>
+				<input id="change-profile-picture" type="file"/>
 				</div>
 				<!-- <p><i class="glyphicon glyphicon-heart-empty"></i>[[CURRENT NAME]]<p>
 				<p><i class="glyphicon glyphicon-time"></i>[[JOINED TIME]]<p> -->
-				<p><i class="glyphicon glyphicon-hand-right"></i>[[CURRENT LEVEL]]</p>
+				<!-- <p><i class="glyphicon glyphicon-hand-right"></i>[[CURRENT LEVEL]]</p> -->
 		    </div>
 		    <div class="col-sm-7 col-xs-10">
 		    	<form id="form-registration" class="form-horizontal" role="form">          

@@ -2,26 +2,27 @@
   {{> flashCard}}
 </template>
 <template name="flashCard">
-  <h1>Flashcard</h1>
-  <div class="container card">
-    <div class="row">
-      <img class="col-sm-offset-4 col-sm-4" src="{{card.image}}" />
+  <div class="center">
+    <h1>Flashcard</h1>
+    <div class="container card">
+      <div class="row">
+        <img id="flashcard-img" class="img-responsive" src="{{card.image}}" />
+      </div>
+      {{#if answered}}
+        <h4>It was a {{cardTranslations.mine}}</h4>
+        <h4>You picked up {{lastAnswer.translation}}</h4>
+        <h4>You answered {{#if card.correctAnswer}}<span class="answer-green">correctly</span>{{else}}<span class="answer-red">incorrectly</span>{{/if}}</h4>
+        <div class="btn btn-default complete">Next Question</div>
+      {{else}}
+
+      <div class="row">
+        {{#each card.options}}
+          <div class="btn btn-default choice blue" style="font-size:2rem;">
+            {{translation}}
+          </div>
+        {{/each}}
+      </div>
+      {{/if}}
     </div>
-    <br />
-    <br />
-    {{#if answered}}
-      <p>It was a {{cardTranslations.mine}}</p>
-      <p>You answered {{lastAnswer.translation}}</p>
-      <p>You answered {{#if card.correctAnswer}}correctly{{else}}incorrectly{{/if}}</p>
-      <div class="btn btn-default complete">Next Question</div>
-    {{else}}
-    <div class="row">
-      {{#each card.options}}
-        <div class="col-sm-3 btn btn-default btn-large choice" style="font-size:2rem;">
-          {{translation}}
-        </div>
-      {{/each}}
-    </div>
-    {{/if}}
   </div>
 </template>

@@ -1,12 +1,24 @@
 .center{
-	margin:auto;
-	padding: 10px 0px 20px 30px;
-	width:70%;
+/*	margin:auto;
+	padding: 10px 0px 20px 30px;*/
+	margin: 0px auto 0px auto;
+	width:80%;
+	text-align: center;
+	vertical-align: middle;
 	background-color:#f8f8f8;
 	border-radius: 4px;
+	padding: 20px 0px;
 }
 
 .introduction{
 	margin: 20px 10px;
 }
 
+#flash-card-img{
+	margin-bottom: 30px;
+	padding: 0px 0px;
+}
+
+.or{
+	margin: 0px 10px;
+}

@@ -1,0 +1,15 @@
+.answer-green{
+	color: #3EB991;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.answer-red{
+	color: #E01563;;
+}
+
+#flashcard-img{
+	margin-left: 25%;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}

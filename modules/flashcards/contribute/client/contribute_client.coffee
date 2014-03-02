@@ -21,10 +21,12 @@ Template.contribute.events =
           available:true
           
       Router.go '/flashcards'
+      Session.set 'learning', true
     , 3000
 
   'click .skip' : ->
     Router.go '/flashcards'
+    Session.set 'learning', true
 
   'click .upload-image': ->
     $('.overlap-file').click()

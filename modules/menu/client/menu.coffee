@@ -10,3 +10,4 @@ Template.selectLanguage.language_list = ->
 Template.selectLanguage.events =
 	"click .learn" : (event, template) ->
 		Session.set 'targetLanguage', @_id
+		Session.set 'learning', true

@@ -8,6 +8,12 @@
   color:#333;
 }
 
+.center-block{
+	margin: 15px auto;
+	text-align: center;
+	width: 30%;
+}
+
 .section-red, .section-green, .section-yellow, .section-blue{
 	padding: 10px 10px;
 	margin: 10px 10px;

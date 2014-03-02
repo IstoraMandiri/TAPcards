@@ -42,7 +42,9 @@ if Meteor.isClient
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
             else
+                console.log 'generating cards'
                 if Session.get('targetLanguage')
+                    console.log 'generating',Session.get('targetLanguage')
                     Meteor.call 'generateNextCards', Session.get('targetLanguage')
 
 

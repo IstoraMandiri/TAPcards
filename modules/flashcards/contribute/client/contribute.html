@@ -1,16 +1,23 @@
 <template name='contribute'>
+  <div class="left center">
   <div class="btn btn-default skip pull-right">
     ... or Skip
   </div>
-  <h1>Contribute!</h1>
+  <h1>Hello!</h1>
   <h2>Take a photo of {{category}}</h2>
   {{#if newCard.image}}
+  <div class="row">
+
+    <div class="col-sm-offset-3">
     <div class="input-group" style='padding-bottom:20px;'>
       <div class="input-group-btn">
         <input class='name-it form-control' type="text" placeholder='What is this?'>
         <div class="btn btn-success save">Submit</div>
       </div>
     </div>
+      
+    </div>
+  </div>
   {{/if}}
   <div class="upload-image">
   <input type='file' class='overlap-file'/>
@@ -19,5 +26,6 @@
   {{else}}
     <img class='camera-icon' src="/camera.png"/>
   {{/if}}
+  </div>
   </div>
 </template>

@@ -3,14 +3,14 @@
 </template>
 <template name="flashCard">
   <div class="center">
-    <h1>Flashcard</h1>
+    <h1>{{cardTranslations.mine}}</h1>
     <div class="container card">
       <div class="row">
-        <img id="flashcard-img" class="img-responsive" src="{{card.image}}" />
+        <img id="flashcard-img" class="img-responsive" src="{{getImage card.image}}" />
       </div>
       {{#if answered}}
-        <h4>It was a <span class="answer-blue">{{cardTranslations.mine}}</span></h4>
-        <h4>You picked up <span class="answer-blue">{{lastAnswer.translation}}</span></h4>
+        {{#unless card.correctAnswer}}<h4>You picked {{lastAnswer.translation}}</h4>{{/unless}}
+        <h4>The correct answer was {{cardTranslations.destination}}</h4>
         <h4>You answered {{#if card.correctAnswer}}<span class="answer-green">correctly</span>{{else}}<span class="answer-red">incorrectly</span>{{/if}}</h4>
         <div class="btn btn-default complete blue">Next Question</div>
       {{else}}

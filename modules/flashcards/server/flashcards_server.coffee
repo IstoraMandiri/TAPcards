@@ -29,6 +29,7 @@ Meteor.methods
     randomCardsWithAnswers = []
     for cardId in randomCardIds
       randomCardsWithAnswers.push generateCardAnswers(cardId,destLang,@userId)
+    console.log 'found cards', randomCardsWithAnswers
     TAP.helpers.updateUserProfile @userId,
       $set:
         nextCards: randomCardsWithAnswers

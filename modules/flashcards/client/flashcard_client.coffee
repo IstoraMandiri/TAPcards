@@ -8,7 +8,7 @@ Template.flashCard.card = ->
 
 Template.flashCard.cardTranslations = ->
   obj = 
-    mine: thisCard()?.translation[TAP.helpers.getProfile(Meteor.userId()).language].word
+    mine: thisCard()?.translation[TAP.helpers.getProfile(Meteor.userId())?.language]?.word
     destination: thisCard()?.translation[Session.get('targetLanguage')]?.word
 
 Template.flashCard.answered = ->  thisCard()?.correctAnswer?

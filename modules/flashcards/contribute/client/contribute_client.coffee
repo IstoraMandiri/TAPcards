@@ -8,10 +8,12 @@
 newCard = -> TAP.cols.Cards.findOne({_id:Session.get('contribCard')})
 
 Template.contribute.events = 
-  'click .complete' : (event) ->
+  'click .save' : (event) ->
     $(event.target).removeClass('compelte').text('Thank You! Saving...')
     translation = {}
-    translation[TAP.cols.UserProfiles.findOne()?.language] = $('.name-it').val()
+    translation[TAP.cols.UserProfiles.findOne()?.language] = 
+      word:$('.name-it').val()
+      verified:0 
     Meteor.setTimeout ->
       TAP.cols.Cards.update {_id:newCard()._id},
         $set:
@@ -20,6 +22,9 @@ Template.contribute.events =
           
       Router.go '/flashcards'
     , 3000
+
+  'click .skip' : ->
+    Router.go '/flashcards'
 
   'click .upload-image': ->
     $('.overlap-file').click()

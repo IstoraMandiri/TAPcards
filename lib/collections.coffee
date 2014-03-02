@@ -185,9 +185,11 @@ if Meteor.isServer
             'en':
               word:"Food #{i}"
               verified: true
+              available: true
             'zh':
               word:"食物 #{i}"
               verified: true
+              available: true
 
       for i in [0..30]
         TAP.cols.Cards.insert
@@ -197,8 +199,10 @@ if Meteor.isServer
             'en':
               word: "Car #{i}"
               verified: true
+              available: true
             'zh':
               word: "汽車 #{i}"
               verified: true
+              available: true
 
 

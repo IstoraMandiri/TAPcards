@@ -1,0 +1,21 @@
+<template name='verify'>
+  <h1>Please Verify this Card to continue</h1>
+  <div class="row">
+    {{#if thisWord}}
+      <h2>{{thisWord}} ?</h2>
+    {{else}}
+      What is this? <input type='text'/>
+    {{/if}}
+    </div>
+  <div class="row">
+    <img class='img-rounded' src="{{getImage card.image}}"/>
+  </div>
+  <div class="div">
+    <div class="btn btn-success good">
+      Correct
+    </div>
+    <div class="btn btn-danger bad">
+      Incorrect
+    </div>   
+  </div>
+</template>

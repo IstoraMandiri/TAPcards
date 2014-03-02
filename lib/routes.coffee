@@ -6,9 +6,6 @@ if Meteor.isClient
         template: 'menu'
         layoutTemplate: 'layout'
         before: ->
-            # if not TAP.cols.UserProfiles.findOne()?.createdProfile?
-            #     @.redirect '/profile'
-
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
 
@@ -28,6 +25,7 @@ if Meteor.isClient
             if Meteor.user()
                 @.redirect '/'
 
+
     @.route 'profile',
         path: '/profile'
         template: 'profile'
@@ -44,8 +42,9 @@ if Meteor.isClient
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
             else
-              Meteor.startup ->
-                Meteor.call 'generateNextCards', Session.get('targetLanguage')
+                if Session.get('targetLanguage')
+                    Meteor.call 'generateNextCards', Session.get('targetLanguage')
+
 
     @.route 'verify',
         path: '/verify'
@@ -54,6 +53,18 @@ if Meteor.isClient
         before: ->
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
+            else
+                user = TAP.helpers.getProfile(Meteor.userId())
+                if user?
+                    query = {}
+                    query["translation.#{user.language}.verified"] = {'$ne':true}
+                    query["available"] = true
+                    verifyCard = _.sample(TAP.cols.Cards.find(query).fetch())?._id
+                    if verifyCard
+                        Session.set 'verifyCardId', verifyCard
+                    else
+                        @.redirect '/contribute'
+
 
 
 
@@ -64,4 +75,8 @@ if Meteor.isClient
         before: ->
             if not Meteor.loggingIn() and not Meteor.user()
                 @.redirect '/login'
-
+            else
+                # random category
+                Session.set 'contribCard', TAP.cols.Cards.insert
+                    category:TAP.helpers.randomCategory()
+                    available:false

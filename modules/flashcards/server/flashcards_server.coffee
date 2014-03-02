@@ -1,5 +1,5 @@
 
-generateCardAnswers = (cardId, destLang) ->
+generateCardAnswers = (cardId, destLang, userId) ->
   card = TAP.cols.Cards.findOne({_id:cardId})
   if card
     card.options = [
@@ -7,7 +7,10 @@ generateCardAnswers = (cardId, destLang) ->
       translation: card.translation[destLang].word
       correct:true
     ]
-    cards = TAP.cols.Cards.find({_id:{$ne:card?._id},category:card?.category}).fetch()
+    query = {}
+    query["translation.#{destLang}.verified"] = true
+    console.log query
+    cards = TAP.cols.Cards.find({_id:{$ne:card?._id},category:card?.category, query}).fetch()
     cards = _.sample cards, 3
     for wrongCard in cards
       card.options.push 
@@ -17,13 +20,16 @@ generateCardAnswers = (cardId, destLang) ->
   return card
 
 Meteor.methods
+
   'generateNextCards' : (destLang) ->
     randomCat = _.sample TAP.cols.Categories.find().fetch()
-    randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id}).fetch(), 10 # change to actual length
+    query = {}
+    query["translation.#{destLang}.verified"] = true
+    randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id,query}).fetch(), 10 # change to actual length
     randomCardIds = _.map randomCards, (card) -> card._id
     randomCardsWithAnswers = []
     for cardId in randomCardIds
-      randomCardsWithAnswers.push generateCardAnswers(cardId,destLang)
+      randomCardsWithAnswers.push generateCardAnswers(cardId,destLang,@userId)
     TAP.helpers.updateUserProfile @userId,
       $set:
         nextCards: randomCardsWithAnswers

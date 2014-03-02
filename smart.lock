@@ -8,7 +8,8 @@
       "jquery-ui": {},
       "iron-router": {},
       "collection2": {},
-      "collectionFS": {}
+      "collectionFS": {},
+      "imagemagick": {}
     },
     "packages": {
       "accounts-ui-bootstrap-3": {
@@ -45,6 +46,11 @@
         "git": "https://github.com/raix/Meteor-CollectionFS.git",
         "tag": "v0.3.7",
         "commit": "34d9fb363472e44c6dba4a1473a9e106e107f5a9"
+      },
+      "imagemagick": {
+        "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
+        "tag": "v0.1.2",
+        "commit": "d67bb926356d35cdff1a6d6c3c69750f3f54c059"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",

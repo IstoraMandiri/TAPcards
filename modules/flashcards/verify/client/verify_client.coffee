@@ -35,3 +35,17 @@ Template.verify.events =
     TAP.cols.Cards.update {_id:thisCard()._id},
       $inc:update
     Router.go '/contribute'
+
+  'click .save' : (event) ->
+    $(event.target).removeClass('compelte').text('Thank You! Saving...')
+    translation = {}
+    translation[TAP.cols.UserProfiles.findOne()?.language] = 
+      word:$('.name-it').val()
+      verified:0 
+    Meteor.setTimeout ->
+      TAP.cols.Cards.update {_id:thisCard()._id},
+        $set:
+          translation:translation
+          
+      Router.go '/contribute'
+    , 3000

@@ -4,17 +4,18 @@
 		<h1>Welcome on board!</h1>
 		
 		{{#if userCreatedProfile}}
-			<a class="btn btn-default red" href="/selectLanguage">Start Learning<i class="glyphicon glyphicon-circle-arrow-right"></i></a>
+			<a class="btn btn-default red" href="/selectLanguage" id="start-learning">Start Learning<i class="glyphicon glyphicon-circle-arrow-right"></i></a><span class="or">or<span>
 		{{else}}
 			<h4 class="introduction">Haven't setup profile? Please click the button and start a wonderful journey!</h4>
-
-			<a class="btn btn-default blue" href="/profile"><i class="glyphicon glyphicon-forward"></i>Setup Profile</a>
 		{{/if}}
+		<a class="btn btn-default blue" href="/profile">Setup Profile<i class="glyphicon glyphicon-forward"></i></a>
 	</div>
 </template>
 
 <template name="selectLanguage">
+	<div class="center">
 	{{#each language_list}}
-		<a id="{{_id}}" class="btn btn-success" href="/flashcards">{{string}}</a>
+		<a id="{{_id}}" class="btn btn-default red" href="/flashcards">{{string}}</a>
 	{{/each}}
+	</div>
 </template>

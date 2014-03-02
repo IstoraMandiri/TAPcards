@@ -21,11 +21,7 @@ label{
 	margin-bottom: 10px;
 }
 
-.glyphicon.glyphicon-forward{
-	margin-right: 5px;
-}
-
-.glyphicon.glyphicon-circle-arrow-right{
+.glyphicon.glyphicon-forward, .glyphicon.glyphicon-circle-arrow-right{
   margin-left: 8px;
 }
 

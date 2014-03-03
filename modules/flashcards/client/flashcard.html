@@ -12,12 +12,12 @@
         {{#unless card.correctAnswer}}<h4>You picked {{lastAnswer.translation}}</h4>{{/unless}}
         <h4>The correct answer was {{cardTranslations.destination}}</h4>
         <h4>You answered {{#if card.correctAnswer}}<span class="answer-green">correctly</span>{{else}}<span class="answer-red">incorrectly</span>{{/if}}</h4>
-        <div class="btn btn-default complete blue">Next Question</div>
+        <div class="btn btn-default btn-lg complete blue">Next Question</div>
       {{else}}
 
       <div class="row">
         {{#each card.options}}
-          <button class="btn btn-default choice blue">
+          <button class="btn btn-lg btn-default choice blue">
             {{translation}}
           </button>
         {{/each}}

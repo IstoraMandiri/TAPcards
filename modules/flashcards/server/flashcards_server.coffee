@@ -24,7 +24,7 @@ Meteor.methods
     randomCat = _.sample TAP.cols.Categories.find().fetch()
     query = {}
     query["translation.#{destLang}.verified"] = true
-    randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id,query}).fetch(), 10 # change to actual length
+    randomCards = _.sample TAP.cols.Cards.find({category:randomCat._id,query}).fetch(), 1 # change to actual length
     randomCardIds = _.map randomCards, (card) -> card._id
     randomCardsWithAnswers = []
     for cardId in randomCardIds
